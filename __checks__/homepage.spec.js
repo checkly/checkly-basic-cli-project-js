@@ -4,7 +4,7 @@ const { test, expect } = require('@playwright/test')
 // test.setTimeout(60_000);
 
 test('Checkly Homepage', async ({ page }) => {
-  const response = await page.goto('https://danube-web.shop')
+  const response = await page.goto(`${defaults.pageUrl}`)
   expect(response?.status()).toBeLessThan(400)
   await expect(page).toHaveTitle(/Danube WebShop/)
   await page.screenshot({ path: 'homepage.jpg' })
